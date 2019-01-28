@@ -1,0 +1,9 @@
+
+## Mac OSX ##
+.DS_Store
+
+## Node modules ##
+node_modules/
+
+## Compiled files ##
+public/js/
