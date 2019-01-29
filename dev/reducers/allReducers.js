@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import gameStatus from './gameStatus-reducer';
+import username from './username-reducer';
 
 export default combineReducers({
-  gameStatus
+  username
 });

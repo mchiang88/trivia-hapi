@@ -1,3 +1,22 @@
 body {
   background-color: orange;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+
+
+  .name-input {
+    margin: 10px auto;
+    border-radius: 50px;
+    border: none;
+    padding: 5px 10px;
+  }
+}
+
