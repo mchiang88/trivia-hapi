@@ -1,12 +1,13 @@
 'use strict';
 
 const Hapi = require('hapi');
-const Path = require('path');
 
 const server = Hapi.server({
   port: 1128,
   host: 'localhost'
 });
+
+const io = require('socket.io')(server.listener, { pingTimeout: 60000 });
 
 const init = async () => {
 
@@ -32,3 +33,7 @@ process.on('unhandledRejection', (err) => {
 });
 
 init();
+
+io.on('connection', function(client) {
+  console.log(`client: ${client.id} has connected`);
+});
