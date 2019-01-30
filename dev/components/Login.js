@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { userLogin } from '../actions';
 
 class Login extends Component {
   constructor(props) {
@@ -20,7 +24,7 @@ class Login extends Component {
   render() {
     return (
       <form>
-        <label htmlFor='username'>Username:</label>
+        <label htmlFor='username'><h3>Username:</h3></label>
         <input 
           onChange={this.handleChange}
           className='name-input'
@@ -29,9 +33,15 @@ class Login extends Component {
           value={this.state.input} 
           placeholder='input user name...'>
         </input>
+        <button onClick={() => this.props.userLogin(this.state.input)}>Log in</button>
       </form>
     )
   }
 }
 
-export default Login;
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ userLogin }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Login);
